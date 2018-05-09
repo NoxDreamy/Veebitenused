@@ -1,0 +1,656 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0",
+    "title": "Veebiteenused",
+    "description": "TODO: Add Description"
+  },
+  "host": "desktop-s281iqe:8080",
+  "basePath": "/ArtWebApplication/webresources",
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/paintings": {
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "GetPaintingList",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "PaintingsGet",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "GET",
+              "uri": "/paintings?token=secret"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "GetPaintingList",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      },
+      "post": {
+        "description": "TODO: Add Description",
+        "summary": "AddPainting",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "PaintingsPost",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "requestId",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/AddPaintingRequest"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "POST",
+              "uri": "/paintings?token=secret&requestId=12",
+              "headers": {
+                "Content-Type": "application/json"
+              },
+              "body": "{\"name\":\"Magic\",\"media\":\"pencil\",\"type\":\"landscape\",\"style\":\"Ilustration\"}"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "AddPainting",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/paintings/1": {
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "GetPainting",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "Paintings1Get",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "GET",
+              "uri": "/paintings/1?token=secret"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "GetPainting",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/artists": {
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "GetArtistList",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "ArtistsGet",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "country",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "artCommunity",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "GET",
+              "uri": "/artists?token=secret&country=Estonia&artCommunity=Ilustrators"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "GetArtistList",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      },
+      "post": {
+        "description": "TODO: Add Description",
+        "summary": "AddArtist",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "ArtistsPost",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "requestId",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/AddArtistRequest"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "POST",
+              "uri": "/artists?token=secret&requestId=135",
+              "headers": {
+                "Content-Type": "application/json"
+              },
+              "body": "{\"name\":\"Mari Mets\",\"dateOfBirth\":\"1995-1-3\",\"country\":\"Estonia\",\"artCommunity\":\"Ilustrators\"}"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "AddArtist",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/artists/1": {
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "GetArtist",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "Artists1Get",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "GET",
+              "uri": "/artists/1?token=secret"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "GetArtist",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/artists/1/paintings": {
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "GetArtistPaintingList",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "Artists1PaintingsGet",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "GET",
+              "uri": "/artists/1/paintings?token=secret"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "GetArtistPaintingList",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      },
+      "post": {
+        "description": "TODO: Add Description",
+        "summary": "AddArtistPainting",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "Artists1PaintingsPost",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "requestId",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/AddArtistPaintingRequest"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "POST",
+              "uri": "/artists/1/paintings?token=secret&requestId=194345",
+              "headers": {
+                "Content-Type": "application/json"
+              },
+              "body": "{\"paintingId\":1,\"creationDate\":\"1998-2-1\",\"price\":99.0}"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "AddArtistPainting",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    }
+  },
+  "definitions": {
+    "AddPaintingRequest": {
+      "title": "AddPaintingRequest",
+      "example": {
+        "name": "Magic",
+        "media": "pencil",
+        "type": "landscape",
+        "style": "Ilustration"
+      },
+      "type": "object",
+      "properties": {
+        "name": {
+          "description": "",
+          "example": "Magic",
+          "type": "string"
+        },
+        "media": {
+          "description": "",
+          "example": "pencil",
+          "type": "string"
+        },
+        "type": {
+          "description": "",
+          "example": "landscape",
+          "type": "string"
+        },
+        "style": {
+          "description": "",
+          "example": "Ilustration",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "media",
+        "type",
+        "style"
+      ]
+    },
+    "AddArtistRequest": {
+      "title": "AddArtistRequest",
+      "example": {
+        "name": "Mari Mets",
+        "dateOfBirth": "1995-1-3",
+        "country": "Estonia",
+        "artCommunity": "Ilustrators"
+      },
+      "type": "object",
+      "properties": {
+        "name": {
+          "description": "",
+          "example": "Mari Mets",
+          "type": "string"
+        },
+        "dateOfBirth": {
+          "description": "",
+          "example": "1995-1-3",
+          "type": "string"
+        },
+        "country": {
+          "description": "",
+          "example": "Estonia",
+          "type": "string"
+        },
+        "artCommunity": {
+          "description": "",
+          "example": "Ilustrators",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "dateOfBirth",
+        "country",
+        "artCommunity"
+      ]
+    },
+    "AddArtistPaintingRequest": {
+      "title": "AddArtistPaintingRequest",
+      "example": {
+        "paintingId": 1,
+        "creationDate": "1998-2-1",
+        "price": 99.0
+      },
+      "type": "object",
+      "properties": {
+        "paintingId": {
+          "description": "",
+          "example": 1,
+          "type": "integer",
+          "format": "int32"
+        },
+        "creationDate": {
+          "description": "",
+          "example": "1998-2-1",
+          "type": "string"
+        },
+        "price": {
+          "description": "",
+          "example": 99,
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "required": [
+        "paintingId",
+        "creationDate",
+        "price"
+      ]
+    }
+  }
+}

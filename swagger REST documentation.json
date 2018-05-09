@@ -237,6 +237,13 @@
             "required": true,
             "type": "string",
             "description": ""
+          },
+          {
+            "name": "hasRelatedPaintings",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
           }
         ],
         "responses": {
@@ -249,7 +256,7 @@
           {
             "request": {
               "method": "GET",
-              "uri": "/artists?token=secret&country=Estonia&artCommunity=Ilustrators"
+              "uri": "/artists?token=secret&country=Estonia&artCommunity=Ilustrators&hasRelatedPaintings=yes"
             },
             "expectedResponse": {
               "x-allowExtraHeaders": true,
